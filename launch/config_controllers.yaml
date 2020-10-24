@@ -1,0 +1,51 @@
+# Robot name goes here
+vanda1robot: # change the name
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 70
+
+  # Controller 2
+  rear_c: # change the name
+    type: effort_controllers/JointVelocityController # Type of controller. 
+    joint: rear_joint # Name of the joint.  
+    pid : {p: 5.0 , i: 0.0 , d: 0.0} # Enter your pid values eg. {p: 100.0 , i: 0.0 , d: 0.0}
+
+  # Controller 3
+  axle_L_c: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: axle_L_joint # Name of the joint.  
+    pid: {p: 7.0 , i: 0.0 , d: 0.2} # Enter your pid values eg. {p: 100.0 , i: 0.0 , d: 0.0}
+
+  # Controller 4
+  wheel_L_c: # change the name
+    type: effort_controllers/JointVelocityController # Type of controller. 
+    joint: wheel_L_joint # Name of the joint.  
+    pid: {p: 5.0 , i: 0.0 , d: 0.0} # Enter your pid values eg. {p: 100.0 , i: 0.0 , d: 0.0}
+
+  # Controller 5
+  axle_R_c: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: axle_R_joint # Name of the joint.  
+    pid: {p: 7.0 , i: 0.0 , d: 0.2} # Enter your pid values eg. {p: 100.0 , i: 0.0 , d: 0.0}
+
+  # Controller 6
+  wheel_R_c: # change the name
+    type: effort_controllers/JointVelocityController # Type of controller. 
+    joint: wheel_R_joint # Name of the joint.  
+    pid: {p: 5.0 , i: 0.0 , d: 0.0} # Enter your pid values eg. {p: 100.0 , i: 0.0 , d: 0.0}
+
+
+  # Controller 2
+  # Controller 3
+  # ....
+  # Controller n
+
+
+  # # Controller 1
+  # dummy_link_joint_controller: # change the name
+  #   type: effort_controllers/JointPositionController # Type of controller. 
+  #   joint: dummy_link_joint # Name of the joint.  
+  #   pid: {p: 100.0 , i: 0.0 , d: 0.0} # Enter your pid values eg. {p: 100.0 , i: 0.0 , d: 0.0}
+
+

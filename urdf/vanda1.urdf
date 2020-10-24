@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="vanda1">
+
+	<link name="dummy_link">
+	</link>
+
+	<joint
+		name="dummy_link_joint" type="fixed">
+		<parent link="dummy_link" />
+		<child link="base_link" />
+	</joint>
+
+	<transmission name="rear_joint_transmission">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  	<joint name="rear_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+	  	<actuator name="rear_joint_motor">
+	    <mechanicalReduction>1</mechanicalReduction>
+	  </actuator>
+	</transmission>
+
+
+	<transmission name="axle_L_joint_transmission">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  	<joint name="axle_L_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+	  	<actuator name="axle_L_joint_motor">
+	    <mechanicalReduction>1</mechanicalReduction>
+	  </actuator>
+	</transmission>
+
+	<transmission name="wheel_L_joint_transmission">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  	<joint name="wheel_L_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+	  	<actuator name="wheel_L_joint_motor">
+	    <mechanicalReduction>1</mechanicalReduction>
+	  </actuator>
+	</transmission>
+
+
+	<transmission name="axle_R_joint_transmission">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  	<joint name="axle_R_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+	  	<actuator name="axle_R_joint_motor">
+	    <mechanicalReduction>1</mechanicalReduction>
+	  </actuator>
+	</transmission>
+
+
+	<transmission name="wheel_R_joint_transmission">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  	<joint name="wheel_R_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+	  	<actuator name="wheel_R_joint_motor">
+	    <mechanicalReduction>1</mechanicalReduction>
+	  </actuator>
+	</transmission>
+
+
+
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.7202E-06 -0.026052 -0.016592"
+        rpy="0 0 0" />
+      <mass
+        value="7.3184" />
+      <inertia
+        ixx="0.46741"
+        ixy="-8.5881E-08"
+        ixz="2.7588E-06"
+        iyy="0.53589"
+        iyz="0.0011101"
+        izz="0.071662" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="axle_L_link">
+    <inertial>
+      <origin
+        xyz="0.0051726 -0.048752 -5.1174E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.67643" />
+      <inertia
+        ixx="0.00066353"
+        ixy="7.4103E-05"
+        ixz="1.5677E-11"
+        iyy="0.00017491"
+        iyz="1.4872E-13"
+        izz="0.00076384" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/axle_L_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/axle_L_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="axle_L_joint"
+    type="continuous">
+    <origin
+      xyz="-0.2286 0.254 0"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="axle_L_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_L_link">
+    <inertial>
+      <origin
+        xyz="4.8047E-07 -6.4496E-08 -0.006751"
+        rpy="0 0 0" />
+      <mass
+        value="1.9945" />
+      <inertia
+        ixx="0.010313"
+        ixy="1.1778E-08"
+        ixz="2.8825E-08"
+        iyy="0.010313"
+        iyz="-3.8693E-09"
+        izz="0.018238" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/wheel_L_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.80784 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/wheel_L_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_L_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0762 0"
+      rpy="1.5708 -0.3918 -1.5708" />
+    <parent
+      link="axle_L_link" />
+    <child
+      link="wheel_L_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="axle_R_link">
+    <inertial>
+      <origin
+        xyz="0.0051726 -0.048752 -5.1174E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.67643" />
+      <inertia
+        ixx="0.00066353"
+        ixy="7.4103E-05"
+        ixz="1.5677E-11"
+        iyy="0.00017491"
+        iyz="1.4872E-13"
+        izz="0.00076384" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/axle_R_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/axle_R_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="axle_R_joint"
+    type="continuous">
+    <origin
+      xyz="0.2286 0.254 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="axle_R_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_R_link">
+    <inertial>
+      <origin
+        xyz="4.8047E-07 -6.4496E-08 -0.006751"
+        rpy="0 0 0" />
+      <mass
+        value="1.9945" />
+      <inertia
+        ixx="0.010313"
+        ixy="1.1778E-08"
+        ixz="2.8825E-08"
+        iyy="0.010313"
+        iyz="-3.8693E-09"
+        izz="0.018238" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/wheel_R_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.80784 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/wheel_R_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_R_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0762 0"
+      rpy="1.5708 0.3918 -1.5708" />
+    <parent
+      link="axle_R_link" />
+    <child
+      link="wheel_R_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rear_link">
+    <inertial>
+      <origin
+        xyz="-1.7202E-06 -0.026052 -0.016592"
+        rpy="0 0 0" />
+      <mass
+        value="7.3184" />
+      <inertia
+        ixx="0.46741"
+        ixy="-8.5881E-08"
+        ixz="2.7588E-06"
+        iyy="0.53589"
+        iyz="0.0011101"
+        izz="0.071662" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/rear_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vanda1/meshes/rear_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.254 -0.0762"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>
